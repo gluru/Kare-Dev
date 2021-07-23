@@ -29,11 +29,16 @@ if (window.HubSpotConversations) {
 
 // Hide Hubspot when needed. 
 function hideHubspot() {
+   if (window.HubSpotConversations) {
     window.HubSpotConversations.widget.remove();
+   }
 }
 
 // Show Hubspot when needed. 
 function loadHubspot(open) {
+    if (!window.HubSpotConversations) {
+        return;
+    }
     window.HubSpotConversations.widget.load({
         widgetOpen: open
     });
@@ -43,6 +48,7 @@ function loadHubspot(open) {
         kare.showLauncher();
     });
 }
+
 
 window.GLR = {
     appId: '<APP-ID>'
