@@ -13,7 +13,7 @@ For more information see [Hubspot developer portal](https://developers.hubspot.c
 // Configure hubspot to load without displaying the FAB.
 // This should ideally be executed before Hubspot.
 if (window.HubSpotConversations) {
-    indow.hsConversationsSettings = {
+    window.hsConversationsSettings = {
         loadImmediately: false,
     };
  }else {
@@ -29,11 +29,15 @@ if (window.HubSpotConversations) {
 
 // Hide Hubspot when needed. 
 function hideHubspot() {
+    if (!window.HubSpotConversations)
+        return;
     window.HubSpotConversations.widget.remove();
 }
 
 // Show Hubspot when needed. 
 function loadHubspot(open) {
+    if (!window.HubSpotConversations)
+        return;
     window.HubSpotConversations.widget.load({
         widgetOpen: open
     });
@@ -53,6 +57,9 @@ window.GLR = {
     d.getElementsByTagName('head')[0].appendChild(j);
 
     j.addEventListener('load', () => {
+        kare.onLoad(function(callbackEvent) {
+            console.log('my custom onLoad callback');
+        });
         kare.onClose(function (callbackEvent) {
             console.log('my custom onClose callback');
         });

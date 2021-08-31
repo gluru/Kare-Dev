@@ -74,6 +74,7 @@ The Javascript SDK allows web developers to control the widget programmatically.
 | close()  | method  | Closes the widget window completely |
 | showLauncher()  | method  | Show the widget launcher |
 | hideLauncher()  | method  | Hide the widget launcher |
+| onLoad(callback)  | method  | Calls the callback that has been passed as an argument when the widget has finished loading. |
 | onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: `kare.onClose(function(event){console.log('my custom close callback')})`. This will log ‘my custom close callback’ |
 | onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
 | onEscalate(callback, message)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
@@ -89,6 +90,15 @@ window.kare.setUserProfileTags(['first-tag', 'second-tag'], true) // This will s
 ```
 
 ## Launching the widget programmatically with Javascript.
+
+To use the widget programmatically on initialization make sure to embed these calls inside the `onLoad` callback, like so:
+```javascript
+//E.g.
+window.kare.onLoad(function() {
+    window.kare.open();
+});
+```
+
 
 ```javascript
 window.kare.open();
@@ -110,6 +120,15 @@ window.kare.hideLauncher();
 ```
 
 ## Setting event handlers programmatically with Javascript.
+
+```javascript
+window.addEventListener('load', ()=>{
+     window.kare.onLoad(function(event){
+      console.log('Widget was initialized.');
+    });
+})
+```
+
 
 ```javascript
 window.addEventListener('load', ()=>{
@@ -268,14 +287,18 @@ If your website is a single page application then you'll likely load our widget 
 Then in your page load handler you'll need to do something like this (Please note this is pseudocode and the actual implementation will depend on your application and programming language):
 
 ```javascript
+  //Wait for page to load
   onPageLoad(page => {
-    if (page === 'contact-us') {
-      // If the current page is contact us, then show the launcher.
-      kare.showLauncher();
-    } else {
-      // Otherwise, hide the launcher and close the widget.
-      kare.hideLauncher();
-      kare.close();
-    }
+      //Wait for widget to load
+      kare.onLoad(function(event) {
+          if (page === 'contact-us') {
+              // If the current page is contact us, then show the launcher.
+              kare.showLauncher();
+          } else {
+              // Otherwise, hide the launcher and close the widget.
+              kare.hideLauncher();
+              kare.close();
+          }
+      });    
   });
 ```

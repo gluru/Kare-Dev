@@ -10,6 +10,9 @@ The required first parameter that we pass to all callbacks when calling them has
 }
 ```
 Any additional parameters will be listed in their own callback
+
+### kare.onLoad
+Executed when the widget is finished initializing
 ### kare.onClose
 Executed when the widget is minimized
 ### kare.onEscalate
@@ -41,7 +44,7 @@ Custom callbacks must be added **after** our widget has loaded.
 
 Notice how we add our callbacks after the event `load` of our script is called.
 
-```
+```html
   <script id="kare-widget">
       window.GLR = {
         appId: '190931b6-d139-4c2b-a3ff-144ad89bc38a'
@@ -52,6 +55,9 @@ Notice how we add our callbacks after the event `load` of our script is called.
         d.getElementsByTagName('head')[0].appendChild(j);
 
         j.addEventListener('load', () => {
+          kare.onLoad(function(callbackEvent) {
+            console.log('my custom onLoad callback');
+          });
           kare.onClose(function(callbackEvent) {
             console.log('my custom onClose callback');
           });
