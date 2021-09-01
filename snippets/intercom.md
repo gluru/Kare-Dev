@@ -30,6 +30,9 @@ window.GLR = {
     d.getElementsByTagName('head')[0].appendChild(j);
 
     j.addEventListener('load', () => {
+        kare.onLoad(function(callbackEvent) {
+            console.log('my custom onLoad callback');
+        });
         kare.onClose(function (callbackEvent) {
             showIntercom();
         });

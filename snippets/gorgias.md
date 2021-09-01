@@ -5,10 +5,10 @@
  3. Customize the Kare script as follows.
 
 
-Fore more information about how to customize your Gorgias integration please check the [Gorgias' advanced settings page](https://docs.gorgias.com/gorgias-chat/advanced-customization-new-chat).
+For more information about how to customize your Gorgias integration please check the [Gorgias' advanced settings page](https://docs.gorgias.com/gorgias-chat/advanced-customization-new-chat).
 
 
-```
+```javascript
 function hideGorgias() {
   var gor = document.getElementById("chat-button");
   gor.style.display = "none"
@@ -23,6 +23,9 @@ window.GLR = {
     d.getElementsByTagName('head')[0].appendChild(j);
 
     j.addEventListener('load', () => {
+        kare.onLoad(function(callbackEvent) {
+            console.log('my custom onLoad callback');
+        });
         kare.onClose(function(callbackEvent) {
         console.log('my custom onClose callback');
         });

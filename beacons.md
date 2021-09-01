@@ -66,10 +66,9 @@ Any html clickable element in your website:
 
 An a piece of javascript code you need to call in order to register that html beacon to the widget.
 
-```javascript
+```html
 <script>
 window.onload = () => {
-
   // Hide the html element that will represent the beacon until the SDK calls the onLoad callback to confirm the beacon is working.
   var beacon = document.getElementById('billing-beacon');
   beacon.style.visibility = 'hidden';

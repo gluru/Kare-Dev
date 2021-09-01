@@ -6,3 +6,4 @@
  *  [Escalating to Gorgias](./snippets/gorgias)
  *  [Escalating to Hubspot](./snippets/hubspot)
  *  [Escalating to Intercom](./snippets/intercom)
+ *  [Escalating to LiveChatWidget](./snippets/livechatwidget)
