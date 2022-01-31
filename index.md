@@ -27,7 +27,7 @@ To see code how to modify the behaviour of the widget see different code snippet
 
 # REST APIs
 
-To explore our REST apis please see the following [REST APIs](http://gluru-docs.s3-website-eu-west-1.amazonaws.com/public/)
+To explore our REST apis please see the following [REST APIs](https://docs.karehq.com/public/core/)
 
 Customers can extend the platform by creating
 [custom applications](./custom-apps) using the APIs.
