@@ -16,11 +16,12 @@ In order to do so first add `isFullscreen: true` to the GLR object then open the
         j.src = 'https://widget.<ENV>.karehq.com/latest.js';
     w.GLR = w.GLR || {};
     d.getElementsByTagName("head")[0].appendChild(j);
-    w.addEventListener('load', ()=>{
-        kare.onLoad(function(event){
-        kare.open();
-      });
-    })
+    const interval = setInterval(() => {
+        if (kare) {
+            kare.open();
+            clearInterval(interval);
+        }
+    }, 1000);
   })(window, document, "script");
 </script>
 ```
