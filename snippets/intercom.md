@@ -6,8 +6,6 @@ Please follow these integration steps:
 2. Load intercom in your page.
 3. Import this script immediately after that.
 
-For more information see [Hubspot developer portal](https://developers.hubspot.com/docs/api/conversation/chat-widget-sdk)
-
 
 ```javascript
 // Hide Intercom when needed. 
