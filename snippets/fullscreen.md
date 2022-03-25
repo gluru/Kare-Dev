@@ -4,7 +4,7 @@ The web widget can be configured to be opened in full screen.
 
 In order to do so first add `isFullscreen: true` to the GLR object then open the widget automatically on load. 
 
-```
+```javascript
 <script>
   window.GLR = {
     appId: '<APP-ID>',
