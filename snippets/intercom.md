@@ -28,8 +28,8 @@ window.GLR = {
     var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
     w.GLR = w.GLR || {};
     d.getElementsByTagName('head')[0].appendChild(j);
-
-    j.addEventListener('load', () => {
+    
+    const interval = setInterval(() => {
         kare.onLoad(function(callbackEvent) {
             console.log('my custom onLoad callback');
         });
@@ -53,7 +53,7 @@ window.GLR = {
         // Hide Intercom by default.
         // Alternatively it can be hidden when Kare opens.
         hideIntercom();
-    });
+    }, 1000);
 })(window, document, 'script');
 ```
 
