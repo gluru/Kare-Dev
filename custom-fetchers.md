@@ -108,7 +108,7 @@ doesn’t need to persist any other data.
 ## White labelling the product
 
 MIND Widget and Admin Console are branded products while the APIs are not
-branded. Integrators willing to hide Kare’s brand from their customers should
+branded. Integrators willing to hide Dialpad’s brand from their customers should
 use the APIs.
 
 # Magento - case study

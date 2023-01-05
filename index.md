@@ -1,6 +1,6 @@
-# Kare MIND - developers documentation
+# Dialpad - developers documentation
 
-Welcome to the MIND's devevelopers knowledgebase. Here you will find instructions
+Welcome to the Dialpad developers knowledgebase. Here you will find instructions
 on how to use Kare's APIs and SDKs in order to customise your experience.
 
 

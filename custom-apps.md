@@ -34,7 +34,7 @@ the client is required to get a new one.
 
 Customers are discouraged from re-using the same `app_id` for multiple purposes
 because it would reduce the ability to counter malicious attacks. Imagine for
-example that the same Kare MIND account would be used to power two portal one
+example that the same Dialpad account would be used to power two portal one
 internal and one public facing with two different applications. If the client
 application deployed in the public portal is then targeted by a DDoS attack the
 domain administrator will be able to disable it without impacting the internal

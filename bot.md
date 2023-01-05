@@ -1,6 +1,6 @@
-# KareBot
+# KareBot by Dialpad
 
-Kare uses a webcrawler to import webpages from third party solutions which have noot been integrated using the APIs. 
+Dialpad uses a webcrawler to import webpages from third party solutions which have not been integrated using the APIs. 
 Once added to the list of resources to be imported the target website will receive requests from out bot.
 
 

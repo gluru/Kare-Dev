@@ -1,6 +1,6 @@
-# Kare MIND Widget
+# Dialpad Widget
 
-This documentation explains how to setup and present Kare MIND widget on your website.
+This documentation explains how to setup and present Dialpad widget on your website.
 
 It can be triggered with a button launcher (default), or launching via calling the javascript API.
 
