@@ -22,3 +22,11 @@ body {
   background: linear-gradient(#AB7EFF, #7C52FF);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .4), 0px 1px 1px rgba(0, 0, 0, .1);
 }
+
+#banner .button:hover {
+  background: #F5F0FF linear-gradient(#AB7EFF, #DAC7FF);
+}
+
+#banner .button:before {
+  background-color: #AB7EFF;
+}
