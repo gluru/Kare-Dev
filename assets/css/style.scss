@@ -38,6 +38,21 @@ header {
   background-color: #AB7EFF;
 }
 
-strong {
+a strong {
   color: #F5F0FF;
+}
+
+td {
+  border-right: 1px solid #3A1D95;
+}
+
+
+li::marker {
+  color: #3A1D95;
+  content: "> ";
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
 }
