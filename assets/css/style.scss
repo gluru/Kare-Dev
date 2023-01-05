@@ -46,6 +46,10 @@ td {
   border-right: 1px solid #3A1D95;
 }
 
+td:first-child {
+  border-left: 1px solid #3A1D95;
+}
+
 
 li::marker {
   color: #3A1D95;
