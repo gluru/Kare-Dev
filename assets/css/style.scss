@@ -18,6 +18,7 @@ header {
 #banner {
   background: #7C52FF;
   border: 1px solid #3A1D95;
+  display: flex;
 }
 
 #banner .fork {
@@ -36,6 +37,13 @@ header {
 
 #banner .button:before {
   background-color: #AB7EFF;
+}
+
+#dialpad-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
 a strong {
