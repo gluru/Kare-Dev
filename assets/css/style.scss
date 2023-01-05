@@ -52,7 +52,7 @@ li::marker {
   content: "> ";
 }
 
-nav ul, nav ol {
-  list-style: none;
-  list-style-image: none;
+nav ul li::marker, nav ol li::marker {
+  content: "";
+  color: inherit;
 }
