@@ -258,7 +258,7 @@ auto assign one.
     "target":{
       "aspect":"open/link",
       "choice_id":"https://developer.karehq.com/custom-apps",
-      "text":"Kare developer portal"
+      "text":"Dialpad developer portal"
     }
   }
 }

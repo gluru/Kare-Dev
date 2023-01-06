@@ -215,11 +215,11 @@ Usually you'll know if you have a multiple page application because the web page
 
 ##### Each page is different
 
-If each page is completely different then all you need to do to show the widget on one page is put the widget script on that page.
+If each page is completely different, then all you need to do to show the widget on one page is put the widget script on that page.
 
 ##### Common header/footer
 
-If you have a common header and/or footer then you can put the Kare widget script in the header or footer of your website with the `showLauncher` flag set to `false` and then call the kare API `kare.showLauncher()` to make it visible on the page that you want to show it on. For example:
+If you have a common header and/or footer then you can put the Dialpad Self Service widget script in the header or footer of your website with the `showLauncher` flag set to `false` and then call the Dialpad API `kare.showLauncher()` to make it visible on the page that you want to show it on. For example:
 
 ```html
   <script>
@@ -235,7 +235,7 @@ If you have a common header and/or footer then you can put the Kare widget scrip
   </script>
 ```
 
-Then, in your client-side code you could show the launcher programatically:
+Then, in your client-side code you could show the launcher programmatically:
 
 ```javascript
   if (page === 'contact-us') {
