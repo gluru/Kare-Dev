@@ -234,7 +234,7 @@ the `user_id` url parameter when establishing the connection.
 ### Metadata
 
 The engine automatically logs as metadata all url parameters starting with
-the `kare-meta-` prefix as indicated in the [JavascriptSDK](./javascript-sdk)
+the `dialpad-meta-` prefix as indicated in the [JavascriptSDK](./javascript-sdk)
 documentation. 
 
 

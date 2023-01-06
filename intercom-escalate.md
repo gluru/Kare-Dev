@@ -14,7 +14,7 @@ Custom pre populated message
 });
 ```
 
-Using last Kare Widget message to prepopulate Intercom
+Using last Dialpad Self Service Widget message to pre-populate Intercom
 ```javascript
  kare.onEscalate(e => {
     const Intercom = window.Intercom;

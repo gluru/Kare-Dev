@@ -45,7 +45,7 @@ Custom callbacks must be added **after** our widget has loaded.
 Notice how we add our callbacks after the event `load` of our script is called.
 
 ```html
-  <script id="kare-widget">
+  <script id="dialpad-widget">
       window.GLR = {
         appId: '190931b6-d139-4c2b-a3ff-144ad89bc38a'
       };

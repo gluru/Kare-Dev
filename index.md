@@ -1,10 +1,10 @@
 # Dialpad - developers documentation
 
 Welcome to the Dialpad developers knowledgebase. Here you will find instructions
-on how to use Kare's APIs and SDKs in order to customise your experience.
+on how to use Dialpads APIs and SDKs in order to customise your experience.
 
 
-# Javascript SDK, Widget and Website integration
+# Javascript SDK, Widget and Website integration (DSS)
 
 The simplest way to integrate the Widget with your website is by using the
 [Javascript SDK](./javascript-sdk). The JS-SDK documentation explains how to
@@ -27,7 +27,9 @@ To see code how to modify the behaviour of the widget see different code snippet
 
 # REST APIs
 
-To explore our REST apis please see the following [REST APIs](https://docs.karehq.com/public/core/)
+To explore our REST apis please select one of the following versions:
+    - [3.0](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.0/swagger.json)
+    - [3.1](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.1/swagger.json)
 
 Customers can extend the platform by creating
 [custom applications](./custom-apps) using the APIs.
@@ -44,7 +46,7 @@ not yet officially supported or to implement custom features.
 Importing files from [Box](./integrations/box/oauth).
 
 For security purposes, if required by your network configuration, it is also
-possible to [white-list Kare's fetchers IP](./whitelisting).
+possible to [white-list Dialpads fetchers IP](./whitelisting).
 
 # Research, publications and patents
 
@@ -52,7 +54,7 @@ Our research is available through our [research lab](https://www.researchgate.ne
 
 # System status
 
-It's possible to receive live status updates by subscring to our [status page](https://karehq.statuspage.io/).
+It's possible to receive live status updates by subscribing to our [status page](https://karehq.statuspage.io/).
 
 
 <script>

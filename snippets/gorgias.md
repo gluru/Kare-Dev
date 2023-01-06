@@ -1,8 +1,8 @@
 # Gorgias
 
  1. Deploy Gorgias in a page.
- 2. In the Kare console enable the `custom` escalation point.
- 3. Customize the Kare script as follows.
+ 2. In the DX console enable the `custom` escalation point.
+ 3. Customize the Dialpad Self Service's script as follows.
 
 
 For more information about how to customize your Gorgias integration please check the [Gorgias' advanced settings page](https://docs.gorgias.com/gorgias-chat/advanced-customization-new-chat).

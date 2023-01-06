@@ -40,7 +40,7 @@ window.GLR = {
             showIntercom();
         });
         kare.onOpen(function (callbackEvent) {
-            // If Intercom coexist with Kare we can close it when Kare
+            // If Intercom coexist with DSS we can close it when DSS
             // is opened. 
             // hideIntercom();
         });
@@ -49,7 +49,7 @@ window.GLR = {
         });
 
         // Hide Intercom by default.
-        // Alternatively it can be hidden when Kare opens.
+        // Alternatively it can be hidden when DSS opens.
         hideIntercom();
     }, 1000);
 })(window, document, 'script');

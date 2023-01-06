@@ -1,8 +1,8 @@
 # LiveChatWidget
 
 1. Deploy LiveChatWidget in a page.
-2. In the Kare console enable the `custom` escalation point.
-3. Customize the Kare script as follows.
+2. In the DX console enable the `custom` escalation point.
+3. Customize the Dialpad Self Service's script as follows.
 
 
 For more information about how to customize your `LiveChatWidget` integration please check the [LiveChatWidget's API](https://developers.livechat.com/docs/extending-chat-widget/javascript-api/).

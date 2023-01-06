@@ -29,16 +29,16 @@ window.GLR = {
 
 Configuration options to pass to `window.GLR` before widget setup.
 
-|  Property    |   Type    |  Description |
-|--------------|-----------|--------------|
-| appId        |   string  | Your client key. Required. |
-| showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. Optional. |
-| isFullscreen | bool      | Loads the widget in fullscreen. This removes navigation so the end-user cannot close the widget. This is ideal for mobile app webviews.|
-| userId          |   string  | Set the user id in the config. This will get sent down on initialization can will appear in the console. Optional.|
-| customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “kare-meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent. Optional. |
-| query | string | Starting query the widget will send when opened |
-| welcomeMessageId | string | Id of the response that the widget will welcome the user when its opened and connected |
-| showPopoverAfter | int | Number of seconds for the popup to appear. Defaul 3 seconds |
+|  Property    |   Type    | Description                                                                                                                                                                                                                                                 |
+|--------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| appId        |   string  | Your client key. Required.                                                                                                                                                                                                                                  |
+| showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. Optional.                                                                                                                      |
+| isFullscreen | bool      | Loads the widget in fullscreen. This removes navigation so the end-user cannot close the widget. This is ideal for mobile app webviews.                                                                                                                     |
+| userId          |   string  | Set the user id in the config. This will get sent down on initialization can will appear in the console. Optional.                                                                                                                                          |
+| customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “dialpad-meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent. Optional. |
+| query | string | Starting query the widget will send when opened                                                                                                                                                                                                             |
+| welcomeMessageId | string | Id of the response that the widget will welcome the user when its opened and connected                                                                                                                                                                      |
+| showPopoverAfter | int | Number of seconds for the popup to appear. Defaul 3 seconds                                                                                                                                                                                                 |
 
 If query or welcomeMessageId are configured at the level of `window.GLR` object, the widget will send the query or welcome with that response every time the user opens a new session. In case you prefer to configure this behavior dynamically in function of the actions of the user you could use the method [`open` from the API](#API)
 
@@ -52,8 +52,8 @@ window.GLR = {
   isFullscreen: true,
   userId: 'my-unique-user-id',
   customHeaders: {
-    'kare-meta-my-custom-header': 'my-custom-value',
-    'kare-meta-custom-header-two': 123
+    'dialpad-meta-my-custom-header': 'my-custom-value',
+    'dialpad-meta-custom-header-two': 123
   }
 };
 ```

@@ -1,24 +1,24 @@
 # How to implement a data fetcher
 
 This document explains the basic principles of how to implement a data fetcher
-plugin (DF) to inject data into Kare MIND. Data fetchers are plugins which keep
-MIND in synch with external data sources.
+plugin (DF) to inject data into Dialpad. Data fetchers are plugins which keep
+Dialpad in sync with external data sources.
 This document assumes that a third party data source has data or resources
-which can be imported as MIND documents.
+which can be imported as Dialpad documents.
 
 # Authentication
 
-DFs need to authenticate both with the third party source and with MIND in
+DFs need to authenticate both with the third party source and with Dialpad in
 order to read data from one and import it in the other.
 
 The DF needs to authenticate with the third party platform as required by the
-vendor. This authentication depends on the platform and it is outside our
+vendor. This authentication depends on the platform, and it is outside our
 control. If the DF runs as a plugin inside the third party platform the
 authentication credentials might already be passed on.
 
-The DF needs to authenticate with MIND APIs.
-Please refer to the [documentation](http://gluru-docs.s3-website-eu-west-1.amazonaws.com/public/)
-for details on how to use the MIND APIs.
+The DF needs to authenticate with Dialpad APIs.
+Please refer to the [documentation](https://petstore.swagger.io/?url=https://api.stg.karehq.com/v3.1/swagger.json)
+for details on how to use the Dialpad APIs.
 
 # Importing documents
 
@@ -27,10 +27,10 @@ for details on how to use the MIND APIs.
 Upon a successful authentication in both platform the DF needs to synchronise
 them by reading all existing resources in one and pushing it to the other.
 This process is as simple as reading all resources and posting them
-sequentially to MIND.
+sequentially to Dialpad.
 
 We advise to import sequentially or with a low parallelism. The APIs will
-throttle aggressive clients. Also the data source will rate limit the requests.
+throttle aggressive clients. Also, the data source will rate limit the requests.
 
 While the data is being imported file changes might occur. This is normal and
 the DF should send updates at the end of the first import.
@@ -53,20 +53,20 @@ have occurred between the beginning and the end of the import. This can be
 easily done by subscribing to events before the first import but only starting
 to consume them at the end of the import.
 
-Note that since the MIND APIs are idempotent applying the same event more than
+Note that since the Dialpad APIs are idempotent applying the same event more than
 once won’t change the state of a document as long as events are applied in the
 correct order.
 
 ## Updating in batch
 
 For those platforms which do not support update events the implementation is a
-little bit more computationally intensive.
+ bit more computationally intensive.
 
 The most brutal implementation is:
  1. Fetch all the existing documents from the third party source
  2. Fetch all existing documents
  3. Put all the existing ones
- 4.  Delete all the ones which no longer exist in the third party source.
+ 4. Delete all the ones which no longer exist in the third party source.
 
 Alternatively the DF could try to sort documents by the last change and record
 the timestamp of the last update.
@@ -76,13 +76,13 @@ changes. We advise updating it at least once every 6 hours.
 
 # UI/UX
 
-DF can be build either standalone or as plugin of existing marketplace
+DF can be built either standalone or as a plugin of an existing marketplace
 (i.e. for instance a Salesforce plugin).
 
 If built standalone the UI should:
  *  Allow the user to authenticate with the third party including all additional credentials
- *  Allow the user to authenticate with MIND
- *  Allow the user to select the MIND region unless hardcoded or preselected.
+ *  Allow the user to authenticate with Dialpad
+ *  Allow the user to select the Dialpad region unless hardcoded or preselected.
 
 If built as a plugin of an existing ecosystem the user will already be
 authenticated with the third party and therefore only steps #2 and #3 are required.
@@ -95,19 +95,19 @@ Some final details.
 
 
 DF is an extremely data intensive component which should ideally be hosted in
-the same geographical area as either the third party service or MIND. It should
+the same geographical area as either the third party service or Dialpad. It should
 also be deployed in a data centre capable of transferring that amount of data.
 Ideally the DF should be deployed in different geographical areas and hit the
-MIND environment in which the customer data is stored.
+Dialpad environment in which the customer data is stored.
 
 ## Data privacy considerations
 
 The DF only needs to store the credentials that are used to transfer data, and
-doesn’t need to persist any other data.
+doesn't need to persist any other data.
 
 ## White labelling the product
 
-MIND Widget and Admin Console are branded products while the APIs are not
+Dialpad Self Service Widget (DSS) and Digital Experience Console (DX Console) are branded products while the APIs are not
 branded. Integrators willing to hide Dialpad’s brand from their customers should
 use the APIs.
 
@@ -116,18 +116,18 @@ use the APIs.
 Magento has a marketplace which contains customer supports plug-ins,
 including FAQs modules and live chat. Most of those plugins are commercial.
 
-A MIND-Magento plugin can be built to:
-Load the widget inside Magento by adding the widget javascript into the page
+A Dialpad-Magento plugin can be built to:
+Load the DSS inside Magento by adding the widget javascript into the page
 template. This would enable the widget to appear and be used in some or in all
 pages of Magento.
-Export product and pages content from Magento to MIND using the documents APIs.
-This would allow Magento content to be searchable by MIND.
-Import MIND documents indexed from other sources (Oracle, Salesforce, Zendesk)
-or MIND responses as content in Magento. This would allow content from other
-sources connected to MIND to be presented as Magento content, for instance to
+Export product and pages content from Magento to Dialpad using the documents APIs.
+This would allow Magento content to be searchable by Dialpad.
+Import Dialpad documents indexed from other sources (Oracle, Salesforce, Zendesk)
+or Dialpad responses as content in Magento. This would allow content from other
+sources connected to Dialpad to be presented as Magento content, for instance to
 create a knowledge base or an FAQ page.
-Use MIND resolutions to apply custom actions leveraging Magento APIs.
-This would allow to connect MIND responses with custom actions implemented by
+Use Dialpad resolutions to apply custom actions leveraging Magento APIs.
+This would allow to connect Dialpad responses with custom actions implemented by
 this plugin.
 
 ## Plugin structure
