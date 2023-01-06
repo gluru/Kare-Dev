@@ -29,8 +29,8 @@ To see code how to modify the behaviour of the widget see different code snippet
 
 To explore our REST apis please select one of the following versions:
 
-* [3.0](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.0/swagger.json)
-* [3.1](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.1/swagger.json)
+* [v3.0](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.0/swagger.json)
+* [v3.1](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.1/swagger.json)
 
 Customers can extend the platform by creating
 [custom applications](./custom-apps) using the APIs.
