@@ -1,7 +1,7 @@
-# Dialpad - developers documentation
+# Dialpad - Developer documentation
 
 Welcome to the Dialpad developers knowledgebase. Here you will find instructions
-on how to use Dialpads APIs and SDKs in order to customise your experience.
+on how to use Dialpad developer APIs and SDKs in order to customise your experience.
 
 
 # Javascript SDK, Widget and Website integration (DSS)
