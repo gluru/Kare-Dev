@@ -29,6 +29,7 @@ To see code how to modify the behaviour of the widget see different code snippet
 
 To explore our REST apis please select one of the following versions:
 
+* [oauth](https://petstore.swagger.io/?url=https://api.eu.karehq.com/oauth/swagger.json)
 * [v3.0](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.0/swagger.json)
 * [v3.1](https://petstore.swagger.io/?url=https://api.eu.karehq.com/v3.1/swagger.json)
 
