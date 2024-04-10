@@ -24,7 +24,8 @@ Open your Box application and navigate to the _Configuration_ tab. If the App wa
 
 ![Configuration](configuration.png)
 
-Now you will need the URL of your DX Console. You can copy that from the browser URL tab once you are signed-in in the DX Console. It should be something like `https://<YOUR-DOMAIN>.karehq.com/details/<ORG-ID>/kbm/box/auth/callback` (CSR) or `https://<YOUR-DOMAIN>.dashboard.karehq.com`. The first word in the URL is your domain. 
+Now you will need the URL of your DX Console. You can copy that from the browser URL tab once you are signed-in in the DX Console. It should be something like `https://csr.<ENV>.karehq.com/details/<ORG-ID>/kbm#`. ENV is for example `us` or `stg`. 
+For the legacy Dashboard `https://<YOUR-DOMAIN>.dashboard.karehq.com`. The first word in the URL is your domain.
 
 In _OAuth 2.0 Redirect URI_ type the following URL by replacing your domain in the template: `https://csr.<ENV>.karehq.com/details/<ORG-ID>/kbm#/box/auth/callback` (or for the legacy Dashboard `https://<YOUR-DOMAIN>.dashboard.karehq.com/box/auth/callback`).
 
