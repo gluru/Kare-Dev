@@ -24,12 +24,7 @@ Open your Box application and navigate to the _Configuration_ tab. If the App wa
 
 ![Configuration](configuration.png)
 
-Now you will need the URL of your DX Console. You can copy that from the browser URL tab once you are signed-in in the DX Console. It should be something like `https://csr.<ENV>.karehq.com/details/<ORG-ID>/kbm#`. ENV is for example `us` or `stg`. 
-For the legacy Dashboard `https://<YOUR-DOMAIN>.dashboard.karehq.com`. The first word in the URL is your domain.
-
-In _OAuth 2.0 Redirect URI_ type the following URL by replacing your domain in the template: `https://csr.<ENV>.karehq.com/details/<ORG-ID>/kbm#/box/auth/callback` (or for the legacy Dashboard `https://<YOUR-DOMAIN>.dashboard.karehq.com/box/auth/callback`).
-
-If you make a mistake, don't worry, Box will tell you by highlighting the text field in red.
+Now you will need the URL of your DX Console. You can copy that from the Box configuration URL that is located in the form and paste it in Oauth 2.0 Redirect URI field.
 
 ![Redirect URI](redirect-uri.png)
 
@@ -37,7 +32,7 @@ In _Application Scopes_ selects _Write all files and folders stored in Box_. Dia
 
 ![Application Scopes](application-scopes.png)
 
-Finally, add `https://csr.<ENV>.karehq.com/details/<ORG-ID>/kbm#/box/auth/callback` (or for the legacy Dashboard `https://<YOUR-DOMAIN>.dashboard.karehq.com/box/auth/callback`) in _CORS Domains_. Please make sure to write your domain name exactly as you did above.
+Finally, paste the Box configuration URL in and CORS Domains field (the same URL previously pasted in Oauth 2.0 Redirect URI).
 
 ![CORS settings](CORS-domains.png)
 
