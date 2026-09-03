@@ -2,62 +2,50 @@
 
 This step-by-step guide explains how to connect a Box account to your Dialpad knowledgebase.
 
-## Create a new Box application (Step 1/3)
+## Get your Box configuration URL (Step 1/3)
 
-Navigate to your [Box developer console](https://app.box.com/developers/console) and create a new client application by clicking on the _Create New App_ button.
+In Dialpad, go to _AI Agents_ > _AI Agent Management_, open the agent you want to configure, go to its _Documents_ tab, then click _Configure sources_ and hit _Connect_ next to _Box_.
+
+![Configure sources](connect-box.png)
+
+This opens the _Connect Box account_ drawer. At the top there's a **Box configuration URL** field with a copy icon — copy it now, you'll need it (and its origin) in the next step.
+
+![Connect Box account](settings.png)
+
+## Create and configure your Box application (Step 2/3)
+
+Navigate to your [Box developer console](https://app.box.com/developers/console) and click _New App_.
 
 ![Create New App](create-new-app.png)
 
-Then choose _Custom App_ from the list of possible applications. Custom applications are the most common and the most powerful.
+Name your application and, under _App Type_, choose **User** ("For apps where users link their Box accounts"). This is required — Dialpad's integration uses per-user OAuth authorization, not the _Server_ (service-account) app type.
 
-![Select App type](select-app-type.png)
+![Create a New App](oauth.png)
 
-Finally, select _OAuth 2.0_ as authentication method and name your application in a memorable way, for instance _DIALPAD sync_.
-
-![OAuth](oauth.png)
-
-Congratulations, you have just created a Box app!
-
-## Configure your new Box application (Step 2/3)
-
-Open your Box application and navigate to the _Configuration_ tab. If the App was created correctly you should see _OAuth 2.0_ as authentication method.
-
-![Configuration](configuration.png)
-
-Now you will need the URL of your DX Console. You can copy that from the Box configuration URL that is located in the form and paste it in Oauth 2.0 Redirect URI field.
+Open the app you just created and go to its _Configuration_ tab. Under **OAuth 2.0 Redirect URIs**, paste the Box configuration URL you copied in Step 1.
 
 ![Redirect URI](redirect-uri.png)
 
-In _Application Scopes_ selects _Write all files and folders stored in Box_. Dialpad needs that permission to share your files if needed. 
+Under **Application Scopes**, check both _Read all files and folders stored in Box_ and _Write all files and folders stored in Box_ — Box requires Read to be enabled before it lets you enable Write.
 
 ![Application Scopes](application-scopes.png)
 
-Finally, paste the Box configuration URL in and CORS Domains field (the same URL previously pasted in Oauth 2.0 Redirect URI).
+Under **CORS Domains**, paste just the origin of the Box configuration URL — scheme and host only, no path, query string, or trailing slash (e.g. `https://console.us.karehq.com`, not the full `.../ingestion/box/return?origin=...` URL).
 
-![CORS settings](CORS-domains.png)
+![CORS Domains](CORS-domains.png)
 
-Don't forget to save!
-
-In the middle of the page there should be a box indicating _Client ID_ and _Client Secret_, you will need them in the next step.
+Click _Save_. Back on the Configuration tab you'll find your **Client ID** and **Client Secret** — you'll need both in the next step.
 
 ## Authorize your Dialpad account (Step 3/3)
 
-Open the DX Console and navigate to _Data Import_ tab of the settings page. Only administrators can access it.
-Once you are there click on _Configure Box_.
+Back in the _Connect Box account_ drawer, fill in the rest of the form:
 
-![Configure Box](connect-box.png)
+ * **Client ID** and **Client Secret**: the OAuth 2.0 credentials from the Box app's _Configuration_ tab.
+ * **Folder URL**: the ID of the Box folder Dialpad should import — paste it after the `https://app.box.com/folder/` prefix shown in the field. It's the number at the end of the folder's URL in your browser, e.g. for `https://app.box.com/folder/123456789` paste `123456789`. Leave it as `0` to import your entire Box account (usually not what you want).
+ * **Labels**: pick or type labels to tag every resource imported from Box.
+ * **Allow downloading files**: lets users download files, instead of only viewing them online through Box.
+ * **Allow public access to files**: by default only Box users in your organization can access imported files; enable this to share them publicly.
+ * **Import web links**: also imports web links bookmarked in your Box account.
+ * **Custom user agent**: Dialpad identifies itself to websites as `KareBot` when downloading a page; change this if needed.
 
-From this settings page you can now configure Dialpad to import and use content from Box. It is really important that you configure it properly because this will configure what Dialpad will do with your files.
-
-![Settings](settings.png)
-
-Let's explain the various parameters:
- *  **Client ID** and **Client Secret** are the OAuth 2.0 credentials that Dialpad will use to connect. You can find them in the _Configuration_ page od the Box App that we just created.  A user will need to authorize the connection once you press on the _Connect Box_ button at the bottom of the form.
- * **Folder ID** is the ID of the Box folder that Dialpad will import. It's the long number that appears in the URL bar of your browser when you are navigating a Box folder. If you leave `0` Dialpad will import everything in your Box account, normally this is not what you will want to do.
- * **Allow to download files** configure Dialpad to allow users to download files or to just let them access them online through Box.
- * **Allow public access to files** by default only Box users in your organization will have access to Box files. Click this option if you want Dialpad to share them publicly.
- * **Import web links** configure Dialpad to import all web links which are bookmarked in your Box account.
- * **Custom user agent** when downloading a web page Dialpad introduces itself to the website as `KareBot`. If you need you can change this.
- * **labels** configure Dialpad to label all resources imported from Box with the following labels. They must be comma separated like `tutorial,customer-engagement,lead-gen`.
-
- Once you press connect Box will handle the authentication process and, if the process is successful, your files will appear in Dialpad.
+Click _Connect_. Box will handle the authorization prompt, and once it succeeds your files will start importing into Dialpad.
